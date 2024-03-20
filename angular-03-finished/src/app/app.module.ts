@@ -21,6 +21,21 @@ import { DocumentEditComponent } from './documents/document-edit/document-edit.c
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { PostComponent } from './posts/post.component';
+import { PostCreateComponent } from './posts/post-create/post-create.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
+
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { MatCardModule} from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
+
+
+
 
 
 @NgModule({
@@ -40,14 +55,23 @@ import { HttpClientModule } from '@angular/common/http';
     MessageListComponent,
     DocumentEditComponent,
     ContactEditComponent,
-    ContactsFilterPipe
+    ContactsFilterPipe,
+    PostComponent,
+    PostCreateComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     DragDropModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

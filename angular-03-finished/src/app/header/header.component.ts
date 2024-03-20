@@ -1,7 +1,20 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html'
+  selector: 'cms-header',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  isUserDropdownOpen: boolean = false;
+  isNavbarCollapsed: boolean = true;
+
+  toggleUserDropdown() {
+    this.isUserDropdownOpen = !this.isUserDropdownOpen;
+  }
+
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+}

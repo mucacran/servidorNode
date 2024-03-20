@@ -1,0 +1,29 @@
+<div class="panel panel-default" xmlns="http://www.w3.org/1999/html">
+    <div class="panel-heading">
+        <div class="row pad-all">
+            <h4 class="title margin-left-right">{{document?.name}}</h4>
+            <div class="row pull-right margin-left-right">
+                <a (click)="onView()" class="btn btn-primary">View</a>
+                <a class="btn btn-info mr1" [routerLink]="['edit']">Edit</a>
+                <a  (click)="onDelete()" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="pad-left-right">
+            <div class="row">
+                <label for="">Description:</label>
+                <span class="label-value"><!--visualizar documento descriptivo aqui-->
+                {{document.description}}
+                </span>
+            </div>
+            <br>
+            <div class="row">
+                <label for="">URL:</label>
+                <span class="label-value"><!--visualizar documento URL aqui-->
+                    {{document.url}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

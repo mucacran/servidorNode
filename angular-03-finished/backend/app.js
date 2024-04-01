@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Post = require('./models/post');
 
 const app = express();
-mongoose.connect('mongodb+srv://elmucacranrasta:xxHMoTqkdyeTe2yf@cluster0.gieapmx.mongodb.net/mibasededatos')
+mongoose.connect('mongodb+srv://elmucacranrasta:xxHMoTqkdyeTe2yf@cluster0.gieapmx.mongodb.net/')
     .then(() => {
         console.log('se ha conectado a la base de datos');
     })
@@ -48,6 +48,10 @@ app.get("/api/posts", (req, res, next) => {
     Post.find()
         .then(posts => {
             console.log(posts); // Aquí obtienes los documentos recuperados de la base de datos
+            res.status(200).json({
+                message: "Posts fetched successfully!",
+                posts: posts
+            });
         })
         .catch(error => {
             console.error('Error al recuperar los posts:', error);
@@ -67,10 +71,21 @@ app.get("/api/posts", (req, res, next) => {
         }
     ];*/
 
-    res.status(200).json({
-        message: "Posts fetched successfully!",
-        posts: posts
-    });
+
+});
+
+app.delete("/api/posts/:id", (req, res, next) => {
+    Post.deleteOne({ _id: req.params.id }).then(result => {
+        console.log(result);
+        res.status(200).json(
+            {
+                message: 'Post eliminado o borrado'
+            }
+        );
+    }
+
+    );
+
 });
 
 module.exports = app;

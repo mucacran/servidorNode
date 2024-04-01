@@ -22,7 +22,7 @@ app.post('/api/posts', (req, res, next) => {
         content: req.body.content
     });
 
-    console.log(req);
+    console.log(post);
     res.status(201).json({
         message: 'Post añadido satisfactoriamente'
     });

@@ -15,7 +15,7 @@ export class PostsService {
 
   getPosts() {
 
-    this.http.get<{ message: string; posts: Post[] }>("http://localhost:3000/api/posts")
+    this.http.get<{ message: string; posts:any }>("http://localhost:3000/api/posts")
     .pipe(map((postData)=>{
       return postData.posts.map(post => {
         return {
@@ -47,6 +47,9 @@ export class PostsService {
   }
 
   deletePost(postId: string){
-    this.http.delete("http://localhost:3000/api/posts" + postId);
+    this.http.delete("http://localhost:3000/api/posts/" + postId)
+    .subscribe(() =>{
+      console.log("Borrado!");
+    });
   }
 }

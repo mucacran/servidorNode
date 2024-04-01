@@ -57,21 +57,6 @@ app.get("/api/posts", (req, res, next) => {
             console.error('Error al recuperar los posts:', error);
         });
 
-    /*
-    const posts = [
-        {
-            id: "fadf12421l",
-            title: "First server-side post",
-            content: "This is coming from the server"
-        },
-        {
-            id: "ksajflaj132",
-            title: "Second server-side post",
-            content: "This is coming from the server!"
-        }
-    ];*/
-
-
 });
 
 app.delete("/api/posts/:id", (req, res, next) => {

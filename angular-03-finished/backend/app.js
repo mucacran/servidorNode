@@ -34,13 +34,14 @@ app.post("/api/posts", (req, res, next) => {
         content: req.body.content
     });
 
-    post.save().then(result =>
-        {console.log(result);}
-        );
-
-    res.status(201).json({
-        message: 'Post added successfully'
-    });
+    post.save().then(createdPost =>
+        {
+            //console.log(createdPost);
+            res.status(201).json({
+                message: 'Post added successfully',
+                postId: createdPost._id
+            });
+        });
 });
 
 app.get("/api/posts", (req, res, next) => {

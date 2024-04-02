@@ -34,11 +34,10 @@ app.post("/api/posts", (req, res, next) => {
         content: req.body.content
     });
 
-    post.save()
-        .then(() => console.log('Post saved successfully'))
-        .catch(error => console.error('Error saving post', error));
+    post.save().then(result =>
+        {console.log(result);}
+        );
 
-    console.log(post);
     res.status(201).json({
         message: 'Post added successfully'
     });

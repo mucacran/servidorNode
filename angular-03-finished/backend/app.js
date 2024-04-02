@@ -67,10 +67,7 @@ app.delete("/api/posts/:id", (req, res, next) => {
                 message: 'Post eliminado o borrado'
             }
         );
-    }
-
-    );
-
+    });
 });
 
 module.exports = app;
